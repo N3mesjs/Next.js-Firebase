@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .inpt{
+        @apply rounded-xl mb-4 p-[10px] focus:outline-blue-600 w-[250px]
+    }
+}
+
 
 .popup {
     position: absolute;
