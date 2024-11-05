@@ -553,8 +553,8 @@ video {
 .w-\[250px\] {
   width: 250px;
 }
-.w-\[300px\] {
-  width: 300px;
+.w-\[400px\] {
+  width: 400px;
 }
 .w-\[80\%\] {
   width: 80%;
@@ -564,9 +564,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.w-\[400px\] {
-  width: 400px;
 }
 .flex-grow {
   flex-grow: 1;
