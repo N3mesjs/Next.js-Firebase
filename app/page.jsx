@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react"
 import { auth } from "./fireBaseAuth.jsx";
 import { onAuthStateChanged } from "firebase/auth";
 
-import SignIn from "./SignIn.jsx";
+import SignUp from "./SignUp.jsx";
 import ChatRoom from "./ChatRoom.jsx";
 
 export default function Page() {
@@ -20,7 +20,7 @@ export default function Page() {
 
     return (
         <>
-            {user? <ChatRoom /> : <SignIn />}
+            {user? <ChatRoom /> : <SignUp />}
         </>
     )
  

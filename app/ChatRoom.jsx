@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 
-import { RealTimeDB, auth } from './fireBaseAuth';
+import { RealTimeDB, auth, FirestoreDB } from './fireBaseAuth';
 
 import { ref, set, onValue, get } from "firebase/database";
+import { getDocs, collection, query } from "firebase/firestore";
 
 import { BsJustify } from "react-icons/bs";
 import PopUp from "./PopUp.jsx"
@@ -13,6 +14,7 @@ import PopUp from "./PopUp.jsx"
 export default function Page() {
 
     const [text, setText] = useState('');
+    const [username, setUsername] = useState('');
     const [id, setId] = useState(0);
     const [messaggi, setMessaggi] = useState([]);
     const [showPopUp, setShowPopUp] = useState(false);
@@ -37,10 +39,18 @@ export default function Page() {
                 let data = snapshot.val();
                 setMessaggi(Object.values(data));
             }
-        })
+        });
         onValue(idRef, (snapshot) => {
             setId(Number(snapshot.val()));
-        })
+        });
+
+        const q = query(collection(FirestoreDB, "users")); 
+        getDocs(q).then(querySnapShot => {
+            querySnapShot.forEach((doc) => {
+                if(doc.data().email == auth.currentUser.email)
+                    setUsername(doc.data().username)
+            })
+        })   
     }, [])
 
     function variazioneTesto(e) {
@@ -54,7 +64,7 @@ export default function Page() {
         set(ref(RealTimeDB, `messaggi/${id}/`), {
             testo: text,
             author: auth.currentUser.email,
-            authorUsername: auth.currentUser.displayName,
+            authorUsername: username,
             authorPFP: auth.currentUser.photoURL
         }).then(() => {
             set(ref(RealTimeDB, "ID/"), id + 1);
