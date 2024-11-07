@@ -104,8 +104,10 @@ export default function Page() {
                             ))}
                         </div>
                         <footer className="text-white bg-black w-full">
-                            <input type="text" className='bg-gray-900 p-[20px] w-[80%] focus:outline-none' placeholder='type you text here...' value={text} onChange={variazioneTesto}></input>
-                            <button className="w-[20%]" onClick={handleSubmit}>✈️</button>
+                            <form>
+                                <input type="text" className='bg-gray-900 p-[20px] w-[80%] focus:outline-none' placeholder='type you text here...' value={text} onChange={variazioneTesto}></input>
+                                <button type="submit" className="w-[20%]" onClick={handleSubmit}>✈️</button>
+                            </form>
                         </footer>
                     </div>
                 </section>
