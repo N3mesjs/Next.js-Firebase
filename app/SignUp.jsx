@@ -1,6 +1,6 @@
 "use client"
 
-import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
+import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, provider, FirestoreDB } from "./fireBaseAuth.jsx"
 
 import { doc, setDoc, getDocs, collection, query, Firestore } from "firebase/firestore";
@@ -15,23 +15,12 @@ import React, { useState, useEffect } from "react"
 
 export default function SignIn() {
 
-    const [email, setEmail] = useState();
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
-    const [errEmailPass, setErrEmailPass] = useState(false);
+    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [errEmail, setErrEmail] = useState(false);
     const [errUsername, setErrUsername] = useState(false);
 
-    const variazioneEmail = (e) => {
-        setEmail(e.target.value)
-    }
-
-    const variazioneUsername = (e) => {
-        setUsername(e.target.value)
-    }
-
-    const variazionePassword = (e) => {
-        setPassword(e.target.value)
-    }
 
     async function GoogleSignUp() {
         const result = await signInWithPopup(auth, provider)
@@ -43,17 +32,29 @@ export default function SignIn() {
         });
     }
 
-    async function handleSubmit() {
+    async function handleSubmit(e) {
+        e.preventDefault();
+        setErrEmail(false);
+        setErrUsername(false);
+
         const queue = query(collection(FirestoreDB, "users"));
         const querySnapshot = await getDocs(queue);
         querySnapshot.forEach((doc) => {
-            if(doc.data().email == email || doc.data().password == password){
-                setErrEmailPass(true)
-            }
-            if(doc.data().username == username){
+            if (doc.data().email == email) {
+                setErrEmail(true)
+            } else if (doc.data().username == username) {
                 setErrUsername(true)
             }
         })
+        if (!errEmail || !errUsername) {
+            const result = await createUserWithEmailAndPassword(auth, email, password);
+            const docRef = doc(FirestoreDB, "users", result.user.uid);
+            await setDoc(docRef, {
+                email: result.user.email,
+                username: result.user.displayName,
+                photoURL: { UserImage },
+            });
+        }
     }
 
 
@@ -65,15 +66,17 @@ export default function SignIn() {
                     <button onClick={GoogleSignUp} className="flex items-center justify-center bg-[#ffffff] px-[20px] py-[10px] text-[#333] rounded-[10px] w-[250px] mb-4"><Image src={GoogleImage} alt='google image' className="rounded-[10px] mr-[10px]" width={20} height={20} />SignUp with Google</button>
                     <hr className="border-[1px] w-[150px] mb-4" />
                     <form className="flex flex-col justify-center text-black" onSubmit={handleSubmit}>
-                        <label for="email"></label>
-                        <input className="inpt" type="email" placeholder="email" value={email} onChange={variazioneEmail} id="email"/>
-                        <input className="inpt" type="text" placeholder="username" value={username} onChange={variazioneUsername} id="username"/>
-                        <input className="inpt" type="password" placeholder="password" value={password} onChange={variazionePassword} id="password"/>
-                        <button type="submit"></button>
+                        <input className="inpt" type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} id="email" />
+                        <input className="inpt" type="text" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} id="username" />
+                        <input className="inpt" type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} id="password" />
+                        <div className="flex justify-center">
+                            <button type="submit" className="w-[150px] rounded-[20px] py-[7px] px-[15px] bg-white">SignUp</button>
+                        </div>
                     </form>
-                    {errEmailPass ? <p className="text-red font-bold">Un account con queste email e password già esiste!</p> : null}
+                    {errEmail ? <p className="text-red font-bold">Un account con questa email esiste giá!</p> : null}
+                    {errUsername ? <p className="text-red font-bold">Un account con questo username esiste giá!</p> : null}
                 </div>
-                
+
             </main>
         </>
     )
