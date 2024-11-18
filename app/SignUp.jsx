@@ -3,7 +3,7 @@
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, provider, FirestoreDB } from "./fireBaseAuth.jsx"
 
-import { doc, setDoc, getDocs, collection, query, Firestore } from "firebase/firestore";
+import { doc, setDoc, getDocs, collection, query } from "firebase/firestore";
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,7 +13,7 @@ import UserImage from "./images/user.png"
 
 import React, { useState, useEffect } from "react"
 
-export default function SignIn() {
+export default function SignUp() {
 
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
@@ -52,7 +52,7 @@ export default function SignIn() {
             await setDoc(docRef, {
                 email: result.user.email,
                 username: result.user.displayName,
-                photoURL: { UserImage },
+                photoURL: {UserImage}
             });
         }
     }
@@ -73,8 +73,8 @@ export default function SignIn() {
                             <button type="submit" className="w-[150px] rounded-[20px] py-[7px] px-[15px] bg-white">SignUp</button>
                         </div>
                     </form>
-                    {errEmail ? <p className="text-red font-bold">Un account con questa email esiste giá!</p> : null}
-                    {errUsername ? <p className="text-red font-bold">Un account con questo username esiste giá!</p> : null}
+                    {errEmail ? <p className="text-red font-bold">Un account con questa email esiste giá!</p> : <p></p>}
+                    {errUsername ? <p className="text-red font-bold">Un account con questo username esiste giá!</p> : <p></p>}
                 </div>
 
             </main>

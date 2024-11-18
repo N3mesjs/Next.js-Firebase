@@ -81,7 +81,7 @@ export default function Page() {
                     <button className="border-2 border-white rounded-[10px] p-1"><BsJustify size={50} /></button>
                     <h2 className="text-[40px] font-bold">Chat App</h2>
                     <div className="flex items-center gap-3">
-                        <Image src={auth.currentUser.photoURL} alt='Profile Pic' className="rounded-[50px]" width={50} height={50} />{auth.currentUser.displayName}
+                        <Image src={auth.currentUser.photoURL} alt='Profile Pic' className="rounded-[50px]" width={50} height={50} />{username}
                         <button className="border-2 rounded-[20px] px-[21px] py-[7px] mr-[10px] bg-[#000] text-white border-transparent hover:text-black hover:bg-white hover:border-black" onClick={LogOut}>LogOut</button>
                     </div>
                 </nav>

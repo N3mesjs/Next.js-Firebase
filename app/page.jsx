@@ -20,7 +20,7 @@ export default function Page() {
 
     return (
         <>
-            {user? <ChatRoom /> : <SignUp />}
+            {user ? <ChatRoom /> : <SignUp />}
         </>
     )
  

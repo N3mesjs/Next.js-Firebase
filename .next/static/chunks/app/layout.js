@@ -12,9 +12,9 @@
 /*!********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5CUsers%5C%5CNymes%5C%5CDocuments%5C%5CGitHub%5C%5CNext.js-FireBase%5C%5Capp%5C%5Cstyle.css%22%2C%22ids%22%3A%5B%5D%7D&server=false! ***!
   \********************************************************************************************************************************************************************************************************************************************************************/
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval(__webpack_require__.ts("Promise.resolve(/*! import() eager */).then(__webpack_require__.bind(__webpack_require__, /*! ./app/style.css */ \"(app-pages-browser)/./app/style.css\"));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwcC1wYWdlcy1icm93c2VyKS8uL25vZGVfbW9kdWxlcy9uZXh0L2Rpc3QvYnVpbGQvd2VicGFjay9sb2FkZXJzL25leHQtZmxpZ2h0LWNsaWVudC1lbnRyeS1sb2FkZXIuanM/bW9kdWxlcz0lN0IlMjJyZXF1ZXN0JTIyJTNBJTIyQyUzQSU1QyU1Q1VzZXJzJTVDJTVDTnltZXMlNUMlNUNEb2N1bWVudHMlNUMlNUNHaXRIdWIlNUMlNUNOZXh0LmpzLUZpcmVCYXNlJTVDJTVDYXBwJTVDJTVDc3R5bGUuY3NzJTIyJTJDJTIyaWRzJTIyJTNBJTVCJTVEJTdEJnNlcnZlcj1mYWxzZSEiLCJtYXBwaW5ncyI6IkFBQUEsd0pBQTBHIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vX05fRS8/MjI5MCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQoLyogd2VicGFja01vZGU6IFwiZWFnZXJcIiAqLyBcIkM6XFxcXFVzZXJzXFxcXE55bWVzXFxcXERvY3VtZW50c1xcXFxHaXRIdWJcXFxcTmV4dC5qcy1GaXJlQmFzZVxcXFxhcHBcXFxcc3R5bGUuY3NzXCIpO1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(app-pages-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5CUsers%5C%5CNymes%5C%5CDocuments%5C%5CGitHub%5C%5CNext.js-FireBase%5C%5Capp%5C%5Cstyle.css%22%2C%22ids%22%3A%5B%5D%7D&server=false!\n"));
+eval(__webpack_require__.ts("Promise.resolve(/*! import() eager */).then(__webpack_require__.bind(__webpack_require__, /*! ./app/style.css */ \"(app-pages-browser)/./app/style.css\"));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwcC1wYWdlcy1icm93c2VyKS8uL25vZGVfbW9kdWxlcy9uZXh0L2Rpc3QvYnVpbGQvd2VicGFjay9sb2FkZXJzL25leHQtZmxpZ2h0LWNsaWVudC1lbnRyeS1sb2FkZXIuanM/bW9kdWxlcz0lN0IlMjJyZXF1ZXN0JTIyJTNBJTIyQyUzQSU1QyU1Q1VzZXJzJTVDJTVDTnltZXMlNUMlNUNEb2N1bWVudHMlNUMlNUNHaXRIdWIlNUMlNUNOZXh0LmpzLUZpcmVCYXNlJTVDJTVDYXBwJTVDJTVDc3R5bGUuY3NzJTIyJTJDJTIyaWRzJTIyJTNBJTVCJTVEJTdEJnNlcnZlcj1mYWxzZSEiLCJtYXBwaW5ncyI6IkFBQUEsd0pBQTBHIiwic291cmNlcyI6WyIiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0KC8qIHdlYnBhY2tNb2RlOiBcImVhZ2VyXCIgKi8gXCJDOlxcXFxVc2Vyc1xcXFxOeW1lc1xcXFxEb2N1bWVudHNcXFxcR2l0SHViXFxcXE5leHQuanMtRmlyZUJhc2VcXFxcYXBwXFxcXHN0eWxlLmNzc1wiKTtcbiJdLCJuYW1lcyI6W10sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(app-pages-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5CUsers%5C%5CNymes%5C%5CDocuments%5C%5CGitHub%5C%5CNext.js-FireBase%5C%5Capp%5C%5Cstyle.css%22%2C%22ids%22%3A%5B%5D%7D&server=false!\n"));
 
 /***/ }),
 
@@ -22,17 +22,17 @@ eval(__webpack_require__.ts("Promise.resolve(/*! import() eager */).then(__webpa
 /*!***********************!*\
   !*** ./app/style.css ***!
   \***********************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval(__webpack_require__.ts("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"859145e82d85\");\nif (true) { module.hot.accept() }\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwcC1wYWdlcy1icm93c2VyKS8uL2FwcC9zdHlsZS5jc3MiLCJtYXBwaW5ncyI6IjtBQUFBLCtEQUFlLGNBQWM7QUFDN0IsSUFBSSxJQUFVLElBQUksaUJBQWlCIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vX05fRS8uL2FwcC9zdHlsZS5jc3M/ZmZhMSJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCBcIjg1OTE0NWU4MmQ4NVwiXG5pZiAobW9kdWxlLmhvdCkgeyBtb2R1bGUuaG90LmFjY2VwdCgpIH1cbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(app-pages-browser)/./app/style.css\n"));
+eval(__webpack_require__.ts("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (\"c3acf70830ea\");\nif (true) { module.hot.accept() }\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwcC1wYWdlcy1icm93c2VyKS8uL2FwcC9zdHlsZS5jc3MiLCJtYXBwaW5ncyI6Ijs7OztBQUFBLGlFQUFlLGNBQWM7QUFDN0IsSUFBSSxJQUFVLElBQUksaUJBQWlCIiwic291cmNlcyI6WyJDOlxcVXNlcnNcXE55bWVzXFxEb2N1bWVudHNcXEdpdEh1YlxcTmV4dC5qcy1GaXJlQmFzZVxcYXBwXFxzdHlsZS5jc3MiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQgXCJjM2FjZjcwODMwZWFcIlxuaWYgKG1vZHVsZS5ob3QpIHsgbW9kdWxlLmhvdC5hY2NlcHQoKSB9XG4iXSwibmFtZXMiOltdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(app-pages-browser)/./app/style.css\n"));
 
 /***/ })
 
 },
-/******/ function(__webpack_require__) { // webpackRuntimeModules
-/******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ __webpack_require__.O(0, ["main-app"], function() { return __webpack_exec__("(app-pages-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5CUsers%5C%5CNymes%5C%5CDocuments%5C%5CGitHub%5C%5CNext.js-FireBase%5C%5Capp%5C%5Cstyle.css%22%2C%22ids%22%3A%5B%5D%7D&server=false!"); });
+/******/ __webpack_require__ => { // webpackRuntimeModules
+/******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+/******/ __webpack_require__.O(0, ["main-app"], () => (__webpack_exec__("(app-pages-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5CUsers%5C%5CNymes%5C%5CDocuments%5C%5CGitHub%5C%5CNext.js-FireBase%5C%5Capp%5C%5Cstyle.css%22%2C%22ids%22%3A%5B%5D%7D&server=false!")));
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ _N_E = __webpack_exports__;
 /******/ }
