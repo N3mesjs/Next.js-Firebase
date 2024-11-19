@@ -51,8 +51,8 @@ export default function SignUp() {
             const docRef = doc(FirestoreDB, "users", result.user.uid);
             await setDoc(docRef, {
                 email: result.user.email,
-                username: result.user.displayName,
-                photoURL: {UserImage}
+                username: username,
+                photoURL: UserImage.src
             });
         }
     }

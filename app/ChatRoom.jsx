@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
+import UserImage from "./images/user.png"
 
 import { RealTimeDB, auth, FirestoreDB } from './fireBaseAuth';
 
@@ -15,6 +16,7 @@ export default function Page() {
 
     const [text, setText] = useState('');
     const [username, setUsername] = useState('');
+    const [pfp, setPFP] = useState("")
     const [id, setId] = useState(0);
     const [messaggi, setMessaggi] = useState([]);
     const [showPopUp, setShowPopUp] = useState(false);
@@ -47,10 +49,13 @@ export default function Page() {
         const q = query(collection(FirestoreDB, "users")); 
         getDocs(q).then(querySnapShot => {
             querySnapShot.forEach((doc) => {
-                if(doc.data().email == auth.currentUser.email)
+                if(doc.data().email == auth.currentUser.email){
                     setUsername(doc.data().username)
+                    setPFP(doc.data().photoURL)
+                }
             })
         })   
+
     }, [])
 
     function variazioneTesto(e) {
@@ -65,7 +70,7 @@ export default function Page() {
             testo: text,
             author: auth.currentUser.email,
             authorUsername: username,
-            authorPFP: auth.currentUser.photoURL
+            authorPFP: pfp
         }).then(() => {
             set(ref(RealTimeDB, "ID/"), id + 1);
             // Resetto il testo nell'input
@@ -81,9 +86,9 @@ export default function Page() {
                     <button className="border-2 border-white rounded-[10px] p-1"><BsJustify size={50} /></button>
                     <h2 className="text-[40px] font-bold">Chat App</h2>
                     <div className="flex items-center gap-3">
-                        <Image src={auth.currentUser.photoURL} alt='Profile Pic' className="rounded-[50px]" width={50} height={50} />{username}
-                        <button className="border-2 rounded-[20px] px-[21px] py-[7px] mr-[10px] bg-[#000] text-white border-transparent hover:text-black hover:bg-white hover:border-black" onClick={LogOut}>LogOut</button>
+                        <Image src={pfp=="" ? UserImage : pfp} alt='Profile Pic' className="rounded-[50px]" width={50} height={50} />{username}
                     </div>
+                    <button className="border-2 rounded-[20px] px-[21px] py-[7px] mr-[10px] bg-[#000] text-white border-transparent hover:text-black hover:bg-white hover:border-black" onClick={LogOut}>LogOut</button>
                 </nav>
 
                 <section className="flex h-[90%]">
