@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
+import Link from 'next/link'
+
 import UserImage from "./images/user.png"
 
 import { RealTimeDB, auth, FirestoreDB } from './fireBaseAuth';
@@ -86,9 +88,9 @@ export default function Page() {
                     <button className="border-2 border-white rounded-[10px] p-1"><BsJustify size={50} /></button>
                     <h2 className="text-[40px] font-bold">Chat App</h2>
                     <div className="flex items-center gap-3">
-                        <Image src={pfp=="" ? UserImage : pfp} alt='Profile Pic' className="rounded-[50px]" width={50} height={50} />{username}
+                        <button className='flex items-center gap-3 mr-[15px] bg-violet-800 p-3 rounded-3xl hover:bg-violet-900'><Image src={pfp=="" ? UserImage : pfp} alt='Profile Pic' className="rounded-[50px]" width={50} height={50} />{username}</button>
+                        <button className="border-2 rounded-[20px] px-[21px] py-[7px] mr-[10px] bg-[#000] text-white border-transparent hover:text-black hover:bg-white hover:border-black" onClick={LogOut}>LogOut</button>
                     </div>
-                    <button className="border-2 rounded-[20px] px-[21px] py-[7px] mr-[10px] bg-[#000] text-white border-transparent hover:text-black hover:bg-white hover:border-black" onClick={LogOut}>LogOut</button>
                 </nav>
 
                 <section className="flex h-[90%]">
