@@ -84,54 +84,55 @@ export default function ListinoSecondi() {
                 </div>
 
                 {/* SIDE DISHES */}
+                <div>
+                    <div id="contorni">
+                        <h1 className="text-5xl font-bold text-center mb-[40px]"><u>SIDE DISHES</u></h1>
+                        <div className="flex justify-between">
+                            <p><b>FRENCH FRIES</b></p>
+                            <p><b>€ 3.00</b></p>
+                        </div>
+                        <div className="mb-3"></div>
 
-                <div id="contorni" className="w-[50%]">
-                    <h1 className="text-5xl font-bold text-center mb-[40px]"><u>SIDE DISHES</u></h1>
-                    <div className="flex justify-between">
-                        <p><b>FRENCH FRIES</b></p>
-                        <p><b>€ 3.00</b></p>
+                        <div className="flex justify-between">
+                            <p><b>GRILLED VEGETABLES</b></p>
+                            <p><b>€ 4.50</b></p>
+                        </div>
+                        ( zucchini, eggplants, bell peppers )
+                        <div className="mb-3"></div>
+
+                        <div className="flex justify-between">
+                            <p><b>MIXED SALAD</b></p>
+                            <p><b>€ 3.00</b></p>
+                        </div>
+                        ( lettuce, carrots, radicchio, cherry tomatoes, corn )
+                        <div className="mb-8"></div>
                     </div>
-                    <div className="mb-3"></div>
 
-                    <div className="flex justify-between">
-                        <p><b>GRILLED VEGETABLES</b></p>
-                        <p><b>€ 4.50</b></p>
+                    {/* SALAD */}
+
+                    <div id="insalatone">
+                        <h1 className="text-5xl font-bold text-center mb-[40px]"><u>SALADS</u></h1>
+                        <div className="flex justify-between">
+                            <p><b>CAESAR SALAD</b></p>
+                            <p><b>€ 9.00</b></p>
+                        </div>
+                        ( romaine lettuce, <b>Grana cheese</b>, croutons, grilled chicken, Caesar dressing )
+                        <div className="mb-3"></div>
+
+                        <div className="flex justify-between">
+                            <p><b>GREEK SALAD</b></p>
+                            <p><b>€ 8.50</b></p>
+                        </div>
+                        ( mixed salad, cucumbers, tomatoes, red onions, olives, <b>feta cheese</b>, oregano, olive oil )
+                        <div className="mb-3"></div>
+
+                        <div className="flex justify-between">
+                            <p><b>MEDITERRANEAN SALAD</b></p>
+                            <p><b>€ 9.50</b></p>
+                        </div>
+                        ( mixed salad, cherry tomatoes, olives, tuna, <b>mozzarella cheese</b>, oregano, olive oil )
+                        <div className="mb-3"></div>
                     </div>
-                    ( zucchini, eggplants, bell peppers )
-                    <div className="mb-3"></div>
-
-                    <div className="flex justify-between">
-                        <p><b>MIXED SALAD</b></p>
-                        <p><b>€ 3.00</b></p>
-                    </div>
-                    ( lettuce, carrots, radicchio, cherry tomatoes, corn )
-                    <div className="mb-8"></div>
-                </div>
-
-                {/* SALAD */}
-
-                <div id="insalatone" className="w-[50%]">
-                    <h1 className="text-5xl font-bold text-center mb-[40px]"><u>BIG SALADS</u></h1>
-                    <div className="flex justify-between">
-                        <p><b>CAESAR SALAD</b></p>
-                        <p><b>€ 9.00</b></p>
-                    </div>
-                    ( romaine lettuce, <b>Grana cheese</b>, croutons, grilled chicken, Caesar dressing )
-                    <div className="mb-3"></div>
-
-                    <div className="flex justify-between">
-                        <p><b>GREEK SALAD</b></p>
-                        <p><b>€ 8.50</b></p>
-                    </div>
-                    ( mixed salad, cucumbers, tomatoes, red onions, olives, <b>feta cheese</b>, oregano, olive oil )
-                    <div className="mb-3"></div>
-
-                    <div className="flex justify-between">
-                        <p><b>MEDITERRANEAN SALAD</b></p>
-                        <p><b>€ 9.50</b></p>
-                    </div>
-                    ( mixed salad, cherry tomatoes, olives, tuna, <b>mozzarella cheese</b>, oregano, olive oil )
-                    <div className="mb-3"></div>
                 </div>
             </main>
             <footer className="text-center text-[20px] font-bold">
