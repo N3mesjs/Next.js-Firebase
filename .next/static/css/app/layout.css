@@ -511,6 +511,9 @@ video {
 .inpt:focus {
   outline-color: #2563eb;
 }
+.absolute {
+  position: absolute;
+}
 .sticky {
   position: sticky;
 }
@@ -543,6 +546,9 @@ video {
 }
 .mr-\[15px\] {
   margin-right: 15px;
+}
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .flex {
   display: flex;
@@ -774,37 +780,37 @@ video {
     transform: translate(-50%, -50%);
 }
 
+li:hover {
+    background-color: hsl(0, 0%, 29%);
+}
 
 .hover\:border-black:hover {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-
 .hover\:bg-violet-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(76 29 149 / var(--tw-bg-opacity));
 }
-
 
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-
 
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-
 .focus\:outline-sky-600:focus {
   outline-color: #0284c7;
 }
+
+

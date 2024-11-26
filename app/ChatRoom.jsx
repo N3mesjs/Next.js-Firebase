@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -22,6 +22,8 @@ export default function Page() {
     const [id, setId] = useState(0);
     const [messaggi, setMessaggi] = useState([]);
     const [showPopUp, setShowPopUp] = useState(false);
+    const [showDrop, setShowDrop] = useState(false);
+    const bottomChat = useRef();
 
     const messageRef = ref(RealTimeDB, "messaggi/")
     const idRef = ref(RealTimeDB, "ID/");
@@ -48,21 +50,20 @@ export default function Page() {
             setId(Number(snapshot.val()));
         });
 
-        const q = query(collection(FirestoreDB, "users")); 
+        const q = query(collection(FirestoreDB, "users"));
         getDocs(q).then(querySnapShot => {
             querySnapShot.forEach((doc) => {
-                if(doc.data().email == auth.currentUser.email){
+                if (doc.data().email == auth.currentUser.email) {
                     setUsername(doc.data().username)
                     setPFP(doc.data().photoURL)
                 }
             })
-        })   
-
+        })
     }, [])
 
-    function variazioneTesto(e) {
-        setText(e.target.value);
-    }
+    useEffect(() => {
+        bottomChat.current.scrollIntoView({ behavior: "smooth" }); //il setRef ha un suo attributo nel html: ref cosi il useRef prende il valore del tag html e puo accedere a diverese proprieta del tag in questo caso ad scrollIntoView
+    }, [messaggi])
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -87,8 +88,9 @@ export default function Page() {
                 <nav className="flex justify-between p-[10px] bg-violet-950 text-white items-center w-full sticky top-0 h-[10%]">
                     <button className="border-2 border-white rounded-[10px] p-1"><BsJustify size={50} /></button>
                     <h2 className="text-[40px] font-bold">Chat App</h2>
+                    <button className='font-bold text-[20px] hover:bg-violet-900 px-[15px] py-[7px] rounded-3xl' onClick={() => setShowDrop(!showDrop)}>DropDown Menu🔽 {showDrop ? <DropDownMenu /> : null} </button>
                     <div className="flex items-center gap-3">
-                        <button className='flex items-center gap-3 mr-[15px] bg-violet-800 p-3 rounded-3xl hover:bg-violet-900'><Image src={pfp=="" ? UserImage : pfp} alt='Profile Pic' className="rounded-[50px]" width={50} height={50} />{username}</button>
+                        <button className='flex items-center gap-3 mr-[15px] bg-violet-800 p-3 rounded-3xl hover:bg-violet-900'><Image src={pfp == "" ? UserImage : pfp} alt='Profile Pic' className="rounded-[50px]" width={50} height={50} />{username}</button>
                         <button className="border-2 rounded-[20px] px-[21px] py-[7px] mr-[10px] bg-[#000] text-white border-transparent hover:text-black hover:bg-white hover:border-black" onClick={LogOut}>LogOut</button>
                     </div>
                 </nav>
@@ -97,7 +99,7 @@ export default function Page() {
                     <div className='w-[15%] overflow-auto flex flex-col items-center'>
                         <h1 className='text-[30px] font-bold'>LE TUE CHAT</h1>
                         <div className='flex-grow'>
-                            
+
                         </div>
                         <div className="mb-4">
                             <button className="px-[15px] py-[7px] border-2 border-black rounded-[10px]" onClick={creaChat}>Aggiungi Chat</button>
@@ -109,10 +111,11 @@ export default function Page() {
                             {messaggi.map((msg, i) => (
                                 <Messaggio testo={msg.testo} author={msg.author} pfp={msg.authorPFP} username={msg.authorUsername} key={i} />
                             ))}
+                            <div ref={bottomChat}></div>
                         </div>
                         <footer className="text-white bg-black w-full">
                             <form>
-                                <input type="text" className='bg-gray-900 p-[20px] w-[80%] focus:outline-none' placeholder='type you text here...' value={text} onChange={variazioneTesto}></input>
+                                <input type="text" className='bg-gray-900 p-[20px] w-[80%] focus:outline-none' placeholder='type you text here...' value={text} onChange={(e) => setText(e.target.value)}></input>
                                 <button type="submit" className="w-[20%]" onClick={handleSubmit}>✈️</button>
                             </form>
                         </footer>
@@ -157,12 +160,27 @@ export default function Page() {
         });
     }
 
-    function creaChat(){
-        if(showPopUp){
+    function creaChat() {
+        if (showPopUp) {
             setShowPopUp(false)
         } else {
             setShowPopUp(true)
         }
         console.log(showPopUp)
+    }
+
+    function DropDownMenu() {
+        return (
+            <>
+                <div className='absolute bg-black p-3 rounded-3xl mt-10'>
+                    <ul>
+                        <li>Chico</li>
+                        <li>Chico</li>
+                        <li>Chico</li>
+                    </ul>
+                </div>
+
+            </>
+        )
     }
 }
