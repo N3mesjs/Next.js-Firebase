@@ -24,6 +24,7 @@ export default function Page() {
     const [showPopUp, setShowPopUp] = useState(false);
     const [showDrop, setShowDrop] = useState(false);
     const bottomChat = useRef();
+    const outsideRef = useRef();
 
     const messageRef = ref(RealTimeDB, "messaggi/")
     const idRef = ref(RealTimeDB, "ID/");
@@ -59,11 +60,26 @@ export default function Page() {
                 }
             })
         })
+
+
+        // in caso di dubbi guarda: https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
+
+        const handleClickOutside = (event) => { // alla funzione in se viene passato event che ci viene fornito dal browser
+            if (ref.current && !outsideRef.current.contains(event.target)) { //controllo che il ref non sia vuoto e grazie all'event posso vedere se il target é contenuto nel ref, quindi controllo il ref e uso contains per vedere se il target dell'evento é contenuto
+              setShowDrop(false)
+            }
+        };
+        
+        document.addEventListener("mousedown", handleClickOutside); // Creo un event listener
+
+        return () => { // nel hook useEffect é buona usanza integrare un return che pulisce tutti gli eventListener
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
     }, [])
 
     useEffect(() => {
-        bottomChat.current.scrollIntoView({ behavior: "smooth" }); //il setRef ha un suo attributo nel html: ref cosi il useRef prende il valore del tag html e puo accedere a diverese proprieta del tag in questo caso ad scrollIntoView
-    }, [messaggi])
+        bottomChat.current.scrollIntoView(); //il setRef ha un suo attributo nel html: ref cosi il useRef prende il valore del tag html e puo accedere a diverese proprieta del tag in questo caso ad scrollIntoView
+    }, [messaggi]) //eseguo il codice ogni volta che messaggi cambia quindi non a ogni render
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -88,7 +104,7 @@ export default function Page() {
                 <nav className="flex justify-between p-[10px] bg-violet-950 text-white items-center w-full sticky top-0 h-[10%]">
                     <button className="border-2 border-white rounded-[10px] p-1"><BsJustify size={50} /></button>
                     <h2 className="text-[40px] font-bold">Chat App</h2>
-                    <button className='font-bold text-[20px] hover:bg-violet-900 px-[15px] py-[7px] rounded-3xl' onClick={() => setShowDrop(!showDrop)}>DropDown Menu🔽 {showDrop ? <DropDownMenu /> : null} </button>
+                    <button ref={outsideRef} className='font-bold text-[20px] hover:bg-violet-900 px-[15px] py-[7px] rounded-3xl' onClick={() => setShowDrop(!showDrop)}>DropDown Menu🔽 {showDrop ? <DropDownMenu /> : null} </button>
                     <div className="flex items-center gap-3">
                         <button className='flex items-center gap-3 mr-[15px] bg-violet-800 p-3 rounded-3xl hover:bg-violet-900'><Image src={pfp == "" ? UserImage : pfp} alt='Profile Pic' className="rounded-[50px]" width={50} height={50} />{username}</button>
                         <button className="border-2 rounded-[20px] px-[21px] py-[7px] mr-[10px] bg-[#000] text-white border-transparent hover:text-black hover:bg-white hover:border-black" onClick={LogOut}>LogOut</button>
