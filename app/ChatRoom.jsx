@@ -65,7 +65,7 @@ export default function Page() {
         // in caso di dubbi guarda: https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
 
         const handleClickOutside = (event) => { // alla funzione in se viene passato event che ci viene fornito dal browser
-            if (ref.current && !outsideRef.current.contains(event.target)) { //controllo che il ref non sia vuoto e grazie all'event posso vedere se il target é contenuto nel ref, quindi controllo il ref e uso contains per vedere se il target dell'evento é contenuto
+            if (outsideRef.current && !outsideRef.current.contains(event.target)) { //controllo che il ref non sia vuoto e grazie all'event posso vedere se il target é contenuto nel ref, quindi controllo il ref e uso contains per vedere se il target dell'evento é contenuto
               setShowDrop(false)
             }
         };
