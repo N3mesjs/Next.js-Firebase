@@ -3,7 +3,7 @@ export default function ListinoSecondi() {
         <>
             <main className="flex p-6 gap-[20px] mb-[20px]">
                 <div id="secondi-piatti" className="w-[50%]">
-                    <h1 className="text-5xl font-bold text-center mb-[40px]"><u>MAIN COURSES</u></h1>
+                    <h1 className="text-5xl font-bold text-center mb-[40px]"><u>SECOND COURSES</u></h1>
                     
                     {/* MEAT */}
                     <h2 className="font-bold text-3xl mb-5"><i><u>Meat</u></i></h2>
@@ -25,7 +25,7 @@ export default function ListinoSecondi() {
                         <p><b>XL CHICKEN CUTLET WITH FRIES</b></p>
                         <p><b>€ 11.00</b></p>
                     </div>
-                    ( bread crumbs, eggs, flour, salt, pepper, and chicken meat )
+                    ( <b>bread crumbs, eggs, flour</b>, salt, pepper, and chicken meat )
                     <div className="mb-3"></div>
 
                     <div className="flex justify-between">
@@ -38,7 +38,7 @@ export default function ListinoSecondi() {
                         <p><b>XL PORK CUTLET WITH FRIES</b></p>
                         <p><b>€ 12.00</b></p>
                     </div>
-                    ( bread crumbs, eggs, flour, salt, pepper, and pork meat )
+                    ( <b>bread crumbs, eggs, flour</b>, salt, pepper, and pork meat )
                     <div className="mb-8"></div>
 
                     {/* FISH */}
@@ -66,7 +66,7 @@ export default function ListinoSecondi() {
                         <p><b>MIXED FRIED SEAFOOD</b></p>
                         <p><b>€ 17.00</b></p>
                     </div>
-                    ( mollusks, crustaceans, and flour )
+                    ( <b>mollusks, crustaceans, and flour</b> )
                     <div className="mb-3"></div>
 
                     <div className="flex justify-between">
@@ -102,34 +102,34 @@ export default function ListinoSecondi() {
                         <p><b>NAPLES-STYLE BROCCOLI RABE</b></p>
                         <p><b>€ 4.50</b></p>
                     </div>
-                    ( garlic, chili pepper, broccoli rabe )
+                    ( garlic, <b>chili pepper</b>, broccoli rabe )
                     <div className="mb-3"></div>
 
                     <div className="flex justify-between">
                         <p><b>SAUTÉED SPINACH</b></p>
                         <p><b>€ 4.00</b></p>
                     </div>
-                    ( with garlic and chili pepper )
+                    ( with garlic and <b>chili pepper</b> )
                     <div className="mb-3"></div>
 
                     <div className="flex justify-between">
                         <p><b>GRILLED VEGETABLES</b></p>
                         <p><b>€ 5.00</b></p>
                     </div>
-                    ( eggplant, zucchini, and bell peppers )
+                    ( <b>eggplant, zucchini, and bell peppers</b> )
                     <div className="mb-8"></div>
 
                     {/* SALADS */}
                     <h1 className="text-4xl font-bold text-center mb-[40px]"><u>BIG SALADS</u></h1>
                     <div className="flex justify-between">
-                        <p><b>MEDITERRANEAN SALAD</b></p>
+                        <p><b>MEDITERRANEAN SALAD ( allegerns lactose )</b></p>
                         <p><b>€ 8.00</b></p>
                     </div>
                     ( <b>buffalo mozzarella</b>, green salad, tomatoes, corn, and tuna )
                     <div className="mb-3"></div>
 
                     <div className="flex justify-between">
-                        <p><b>CHARLIE SALAD</b></p>
+                        <p><b>CHARLIE SALAD ( shellfish )</b></p>
                         <p><b>€ 8.00</b></p>
                     </div>
                     ( green salad, arugula, tomatoes, <b>buffalo mozzarella</b>, and shrimp )
@@ -140,11 +140,17 @@ export default function ListinoSecondi() {
                         <p><b>€ 8.00</b></p>
                     </div>
                     ( green salad, arugula, cherry tomatoes, and crispy chicken )
-                    <div className="mb-3"></div>
+                    <div className="mb-10"></div>
+
+                    <div className="font-bold text-[20px]">
+                        <p>( THE FRIES CONTAIN GLUTEN-FREE POLENTA )</p>
+                        <p>(ALLERGEN TRACES ARE: FLOUR, BALSAMIC VINEGAR SULFITES, EGGS, LACTOSE, SHELLFISH, MOLLUSCS, BREADCRUMBS)</p>
+                    </div>
                 </div>
             </main>
             <footer className="text-center text-[20px] font-bold">
                 <p>( the allergenic ingredients are highlighted in bold )</p>
+                <p>COVER CHARGE € 2.20</p>
             </footer>
         </>
     )
