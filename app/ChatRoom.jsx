@@ -100,7 +100,7 @@ export default function Page() {
 
     return (
         <>
-            <main className="flex flex-col h-screen">
+            <main className="flex flex-col h-screen flex-wrap">
                 <nav className="flex justify-between p-[10px] bg-violet-950 text-white items-center w-full sticky top-0 h-[10%]">
                     <button className="border-2 border-white rounded-[10px] p-1"><BsJustify size={50} /></button>
                     <h2 className="text-[40px] font-bold">Chat App</h2>
