@@ -83,19 +83,20 @@ export default function Page() {
 
     function handleSubmit(e) {
         e.preventDefault();
-
-        // Prendo l'ID e lo assegno a id
-        set(ref(RealTimeDB, `messaggi/${id}/`), {
-            testo: text,
-            author: auth.currentUser.email,
-            authorUsername: username,
-            authorPFP: pfp
-        }).then(() => {
-            set(ref(RealTimeDB, "ID/"), id + 1);
-            // Resetto il testo nell'input
-            setText('');
-        })
-        // Incremento l'ID
+        if(text !== ''){
+            // Prendo l'ID e lo assegno a id
+            set(ref(RealTimeDB, `messaggi/${id}/`), {
+                testo: text,
+                author: auth.currentUser.email,
+                authorUsername: username,
+                authorPFP: pfp
+            }).then(() => {
+                set(ref(RealTimeDB, "ID/"), id + 1);
+                // Resetto il testo nell'input
+                setText('');
+            })
+            // Incremento l'ID
+        }
     };
 
     return (
